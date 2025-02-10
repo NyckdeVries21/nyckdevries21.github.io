@@ -1,14 +1,14 @@
 [
     {
-        "name": "vedic",
-        "url": "https://github.com/vedic-lang/vedic",
-        "description": "Vedic is World first working Programming launguage in Sanskrit",
-        "banner": "https://opengraph.githubassets.com/b695a5936d79f0ee7b404cc031bac6d003278a905201448fc5edc763055889e0/vedic-lang/vedic",
+        "name": "Github Page",
+        "url": "https://github.com/NyckdeVries21",
+        "description": "My Github page",
+        "banner": "../img/githubpage.png",
         "color": "#dea584",
-        "lang": "Rust",
-        "date": "2022-04-11T12:06:09Z",
-        "stars": 177,
-        "forks": 24,
-        "generatedOn": "2023-12-01 01:18:07.645803"
+        "lang": "Github",
+        "date": "05-02-2025T09:11:01Z",
+        "stars": 1,
+        "forks": 0,
+        "generatedOn": "2023-12-01 01:18:07"
     }
 ]

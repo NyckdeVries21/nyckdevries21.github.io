@@ -407,7 +407,7 @@ p {
   height: 123px;
   width: 123px;
   border-radius: 50%;
-  background: url(https://cdn.website-editor.net/84d400407e544eef8c9f229a59d50ced/dms3rep/multi/king-willem-alexander-april-2013.jpg);
+  background-image: url("../img/ballen.jpg");
   background-size: cover;
   margin: 0 auto;
 }
@@ -469,7 +469,7 @@ p {
   top: 0;
 }
 .bg-struct.bg-img {
-  background: url(../img/img-bg-1.jpg);
+  background: url(https://www.carscoops.com/wp-content/uploads/2023/07/2023-AlphaTauri-AT04.jpg);
   background-position: center;
   background-size: cover;
 }
