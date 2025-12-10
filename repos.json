@@ -22,9 +22,9 @@
     "forks": 0
   },
   {
-    "name": "Asteroids 3D",
+    "name": "Operation Phoenix",
     "url": "ásteroids.html",
-    "description": "Shoot at Asteroids in a 3D space environment.",
+    "description": "Shoot at Robot Enemies to get score.",
     "banner": "img/AsteroidsGame.png",
     "color": "#FF9800",
     "lang": "C# - Unity",
