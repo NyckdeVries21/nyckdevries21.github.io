@@ -1,14 +1,35 @@
 [
-    {
-        "name": "Github Page",
-        "url": "https://github.com/NyckdeVries21",
-        "description": "My Github page",
-        "banner": "../img/githubpage.png",
-        "color": "#dea584",
-        "lang": "Github",
-        "date": "05-02-2025T09:11:01Z",
-        "stars": 1,
-        "forks": 0,
-        "generatedOn": "2023-12-01 01:18:07"
-    }
+  {
+    "name": "Mini Mages",
+    "url": "minimages.html",
+    "description": "1v1 Arena Fight with different attacks.",
+    "banner": "img/minimages.png",
+    "color": "#4CAF50",
+    "lang": "C# - Unity",
+    "date": "2025-12-05T10:00:00Z",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "Formula 2D Racer",
+    "url": "f2racegame.html",
+    "description": "Top-down raceprototype. Unreleased.",
+    "banner": "img/F2GStart.png",
+    "color": "#2196F3",
+    "lang": "C# - Unity",
+    "date": "2025-12-05T10:00:00Z",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "Asteroids 3D",
+    "url": "ásteroids.html",
+    "description": "Shoot at Asteroids in a 3D space environment.",
+    "banner": "img/AsteroidsGame.png",
+    "color": "#FF9800",
+    "lang": "C# - Unity",
+    "date": "2025-12-05T10:00:00Z",
+    "stars": 0,
+    "forks": 0
+  }
 ]
