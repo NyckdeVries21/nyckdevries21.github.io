@@ -6,9 +6,7 @@
     "banner": "img/minimages.png",
     "color": "#4CAF50",
     "lang": "C# - Unity",
-    "date": "2025-12-05T10:00:00Z",
-    "stars": 0,
-    "forks": 0
+    "date": "2025-12-05T10:00:00Z"
   },
   {
     "name": "Formula 2D Racer",
@@ -17,9 +15,7 @@
     "banner": "img/F2GStart.png",
     "color": "#2196F3",
     "lang": "C# - Unity",
-    "date": "2025-12-05T10:00:00Z",
-    "stars": 0,
-    "forks": 0
+    "date": "2025-10-28T10:00:00Z"
   },
   {
     "name": "Operation Phoenix",
@@ -28,8 +24,6 @@
     "banner": "img/AsteroidsGame.png",
     "color": "#FF9800",
     "lang": "C# - Unity",
-    "date": "2025-12-05T10:00:00Z",
-    "stars": 0,
-    "forks": 0
+    "date": "2025-04-17T10:00:00Z"
   }
 ]
