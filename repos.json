@@ -25,5 +25,14 @@
     "color": "#FF9800",
     "lang": "C# - Unity",
     "date": "2025-04-17T10:00:00Z"
+  },
+  {
+    "name": "Gooi 't Maar",
+    "url": "gooitmaar.html",
+    "description": "Select a card to use an object.",
+    "banner": "img/gooitmaargame.png",
+    "color": "#FF9800",
+    "lang": "C# - Unity",
+    "date": "2026-1-27T10:00:00Z"
   }
 ]

@@ -39,18 +39,6 @@
     </a>
     <div class="main-wrapper">
       <div class="mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-          <div class="mdl-layout__header-row mdl-scroll-spy-1">
-            <a href="index.html"><span class="mdl-layout-title">Michael van Baalen</span></a>
-            <div class="mdl-layout-spacer"></div>
-            <nav class="mdl-layout--large-screen-only">
-              <a class="mdl-navigation__link" href="index.html#portfolio_sec">portfolio</a>
-              <a class="mdl-navigation__link" href="index.html#project_sec">projects</a>
-              <a class="mdl-navigation__link" href="index.html#contact_sec">contact</a>
-            </nav>
-          </div>
-        </header>
-
         <div class="main-content relative">
           <div class="container">
             <section class="about-sec mt-40 mb-20">
@@ -137,28 +125,49 @@
 
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script>
-      const galleryElements = document.querySelectorAll('.gallery [data-src]');
-      const modal = document.getElementById('mediaModal');
-      const content = document.getElementById('mediaContent');
-      const closeBtn = document.getElementById('mediaClose');
-
-      galleryElements.forEach(el => {
-        el.addEventListener('click', () => {
-          const type = el.dataset.type;
-          const src = el.dataset.src;
-          if (type === 'image') {
-            content.innerHTML = '<img src="' + src + '" alt="">';
-          } else {
-            content.innerHTML = '<video controls autoplay style="max-width:100%;height:auto;"><source src="' + src + '"></video>';
-          }
-          modal.style.display = 'flex';
-          modal.focus();
+      // tabs
+      document.querySelectorAll('.tabs .tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tabs .tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const which = tab.dataset.tab;
+          const screenshots = document.getElementById('gallery-screenshots');
+          if (screenshots) screenshots.style.display = which === 'screenshots' ? 'flex' : 'none';
+          const demoEl = document.getElementById('gallery-demo');
+          if (demoEl) demoEl.style.display = which === 'demo' ? 'flex' : 'none';
         });
       });
 
-      closeBtn.addEventListener('click', () => { modal.style.display = 'none'; content.innerHTML = ''; });
-      modal.addEventListener('click', (e) => { if (e.target === modal) { modal.style.display = 'none'; content.innerHTML = ''; } });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') { modal.style.display = 'none'; content.innerHTML = ''; } });
-    </script>
-  </body>
+      // modal behavior with src fallback
+      function attachGalleryListeners() {
+        const items = document.querySelectorAll('.gallery img, .gallery video, .gallery [data-src]');
+        const modal = document.getElementById('mediaModal');
+        const content = document.getElementById('mediaContent');
+        items.forEach(el => {
+          el.addEventListener('click', () => {
+            const rawType = el.dataset.type;
+            const src = el.dataset.src || el.getAttribute('data-src') || el.getAttribute('src') || (el.tagName === 'VIDEO' ? (el.querySelector('source') ? el.querySelector('source').getAttribute('src') : el.getAttribute('poster')) : null);
+            const type = rawType || (el.tagName === 'VIDEO' ? 'video' : 'image');
+            if (!src) { console.warn('No media src found for element', el); return; }
+            if (type === 'image') {
+              content.innerHTML = '<img src="' + src + '" alt="">';
+            } else {
+              content.innerHTML = '<video controls autoplay style="max-width:100%;height:auto;"><source src="' + src + '"></video>';
+            }
+            modal.style.display = 'flex';
+            modal.focus();
+          });
+        });
+      }
+
+      attachGalleryListeners();
+
+      const closeBtn = document.getElementById('mediaClose');
+      const modalEl = document.getElementById('mediaModal');
+      const mediaContent = document.getElementById('mediaContent');
+      closeBtn.addEventListener('click', () => { modalEl.style.display = 'none'; mediaContent.innerHTML = ''; });
+      modalEl.addEventListener('click', (e) => { if (e.target === modalEl) { modalEl.style.display = 'none'; mediaContent.innerHTML = ''; } });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') { modalEl.style.display = 'none'; mediaContent.innerHTML = ''; } });
+</script>
+</body>
 </html>

@@ -295,7 +295,7 @@ p {
 }
 .mdl-tooltip {
   text-transform: capitalize;
-  background: #444;
+  
   font-weight: 400;
   font-size: 12px;
 }
@@ -617,40 +617,28 @@ p {
   outline: none;
 }
 .contact-sec .social-icons li a i {
-  color: white;
-  font-size: 35px;
-  margin: 5px 0;
-  background-color: white;
+  font-size: 26px;
+  margin: 0;
+  display: inline-block;
+  background: transparent;
   border: 0;
-  border-radius: 2px;
-  width: 40px;
-  line-height: 40px;
-  -moz-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  color: #444;
+  -moz-transition: 0.15s ease;
+  -o-transition: 0.15s ease;
+  -webkit-transition: 0.15s ease;
+  transition: 0.15s ease;
 }
-.contact-sec .social-icons li a.facebook-link i {
-  background-color: #3b5998;
-}
-.contact-sec .social-icons li a.twitter-link i {
-  background-color: #55acee;
-}
-.contact-sec .social-icons li a.linkedin-link i {
-  background-color: #007bb6;
-}
-.contact-sec .social-icons li a.github-link i {
-  background-color: #f1502f;
-}
-.contact-sec .social-icons li a.instagram-link i {
-  background-color: #3f729b;
-}
-.contact-sec .social-icons li a.reddit-link i {
-  background-color: #ff4500;
-}
-.contact-sec .social-icons li a.youtube-link i {
-  background-color: #ff0002;
-}
+.contact-sec .social-icons li a.facebook-link i { color: #3b5998; }
+.contact-sec .social-icons li a.twitter-link i { color: #55acee; }
+.contact-sec .social-icons li a.linkedin-link i { color: #007bb6; }
+.contact-sec .social-icons li a.github-link i { color: #333; }
+.contact-sec .social-icons li a.instagram-link i { color: #E1306C; }
+.contact-sec .social-icons li a.reddit-link i { color: #ff4500; }
+.contact-sec .social-icons li a.youtube-link i { color: #ff0002; }
 @media (max-width: 1023px) {
   .mdl-layout--large-screen-only {
     display: none;

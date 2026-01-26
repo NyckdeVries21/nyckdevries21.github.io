@@ -85,6 +85,22 @@
     <style>
       html { scroll-padding-top: 64px; }
       @media (max-width: 600px) { html { scroll-padding-top: 96px; } }
+
+      /* Fixed top navigation to keep links clickable */
+      #top-fixed-nav { position:fixed; top:0; left:0; right:0; z-index:2000; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+      #top-fixed-nav .top-inner { display:flex; align-items:center; max-width:1200px; margin:0 auto; padding:6px 16px; }
+      #top-fixed-nav .site-title { font-weight:700; margin-right:24px; font-size:18px; color:#222; text-decoration:none; }
+      #top-fixed-nav .nav { display:flex; justify-content:flex-end; align-items:center; margin:0; padding:0; flex:1; }
+      #top-fixed-nav .nav li { list-style:none; margin-left:18px; }
+      #top-fixed-nav a { color:inherit; text-decoration:none; }
+      @media (max-width: 992px) { #top-fixed-nav { display:none; } }
+
+      /* hide original header title to avoid duplicate */
+      .mdl-layout__header .mdl-layout-title { display:none; }
+
+      /* push page content below fixed top nav */
+      .main-wrapper { padding-top:64px; }
+      @media (max-width:600px) { .main-wrapper { padding-top:96px; } }
     </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4NJD8J3MD"></script>
@@ -97,51 +113,25 @@
 </script>
   </head>
   <body>
+    <div id="top-fixed-nav">
+      <div class="top-inner">
+        <a class="site-title" href="index.html">Michael van Baalen</a>
+        <ul class="nav mdl-navigation mdl-layout--large-screen-only">
+          <li><a class="mdl-navigation__link" data-scroll href="#body">About</a></li>
+          <li><a class="mdl-navigation__link" data-scroll href="#portfolio_sec">Portfolio</a></li>
+          <li><a class="mdl-navigation__link" data-scroll href="#interest_sec">Interests</a></li>
+          <li><a class="mdl-navigation__link" data-scroll href="#project_sec">Projects</a></li>
+          <li><a class="mdl-navigation__link" data-scroll href="#contact_sec">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="main-wrapper">
       <div class="bg-struct bg-img"></div>
-      <div class="mdl-js-layout mdl-layout--fixed-header">
+      <div class="mdl-js-layout">
         <header class="mdl-layout__header">
           <div class="mdl-layout__header-row mdl-scroll-spy-1">
-            <a href="index.html"
-              ><span class="mdl-layout-title">Michael van Baalen</span></a
-            >
-            <div class="mdl-layout-spacer"></div>
-            <ul class="nav mdl-navigation mdl-layout--large-screen-only">
-              <li>
-                <a class="mdl-navigation__link" data-scroll href="#body"
-                  >about</a
-                >
-              </li>
-              <li>
-                <a
-                  class="mdl-navigation__link"
-                  data-scroll
-                  href="#portfolio_sec"
-                  >portfolio</a
-                >
-              </li>
-              <li>
-                <a class="mdl-navigation__link" data-scroll href="#interest_sec"
-                  >interest</a
-                >
-              </li>
-              <li>
-                <a class="mdl-navigation__link" data-scroll href="#project_sec"
-                  >project</a
-                >
-              </li>
-              <li>
-                <a class="mdl-navigation__link" data-scroll href="#contact_sec"
-                  >contact</a
-                >
-              </li>
-            </ul>
-            <button
-              id="demo-menu-lower-right"
-              class="mdl-button mdl-js-button mdl-button--icon ver-more-btn"
-            >
-              <i class="material-icons">more_vert</i>
-            </button>
+            
             <ul
               class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
               data-mdl-for="demo-menu-lower-right"
@@ -208,7 +198,7 @@
                     href="https://github.com/NyckdeVries21"
                   >
                     <i id="tt14" class="zmdi zmdi-github"></i>
-                    <div class="mdl-tooltip" data-mdl-for="tt14">github</div>
+                    <div class="mdl-tooltip" data-mdl-for="tt14">Github</div>
                   </a>
                 </li>
                 <li>
@@ -217,7 +207,7 @@
                     href="https://www.instagram.com/michaelwitkamp/"
                   >
                     <i id="tt15" class="zmdi zmdi-instagram"></i>
-                    <div class="mdl-tooltip" data-mdl-for="tt15">instagram</div>
+                    <div class="mdl-tooltip" data-mdl-for="tt15">Instagram</div>
                   </a>
                 </li>
               </ul>
@@ -231,7 +221,7 @@
                     href="#body"
                   >
                     <i class="zmdi zmdi-border-color pr-15"></i>
-                    <span class="font-capitalize">about</span>
+                    <span class="font-capitalize">About</span>
                   </a>
                 </li>
                 <li>
@@ -241,7 +231,7 @@
                     href="#portfolio_sec"
                   >
                     <i class="zmdi zmdi-case pr-15"></i>
-                    <span class="font-capitalize">portfolio</span>
+                    <span class="font-capitalize">Portfolio</span>
                   </a>
                 </li>
                 <li>
@@ -251,7 +241,7 @@
                     href="#interest_sec"
                   >
                     <i class="zmdi zmdi-coffee pr-15"></i>
-                    <span class="font-capitalize">interest</span>
+                    <span class="font-capitalize">Interests</span>
                   </a>
                 </li>
                 <li>
@@ -261,7 +251,7 @@
                     href="#project_sec"
                   >
                     <i class="zmdi zmdi-code pr-15"></i>
-                    <span class="font-capitalize">projects</span>
+                    <span class="font-capitalize">Projects</span>
                   </a>
                 </li>
                 <li>
@@ -271,7 +261,7 @@
                     href="#contact_sec"
                   >
                     <i class="zmdi zmdi-email pr-15"></i>
-                    <span class="font-capitalize">contact</span>
+                    <span class="font-capitalize">Contact</span>
                   </a>
                 </li>
               </ul>
@@ -334,7 +324,7 @@
                             >
                               <i id="tt5" class="zmdi zmdi-instagram"></i>
                               <div class="mdl-tooltip" data-mdl-for="tt5">
-                                instagram
+                                Instagram
                               </div>
                             </a>
                           </li>
@@ -345,7 +335,7 @@
                             >
                               <i id="tt4" class="zmdi zmdi-github"></i>
                               <div class="mdl-tooltip" data-mdl-for="tt4">
-                                github
+                                Github
                               </div>
                             </a>
                           </li>
@@ -358,18 +348,12 @@
                            Game Developer - Beginner / Learner 
                           </h5>
                           <div class="mt-30">
-                            <a
-                              id="download_cv"
-                              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bg-green font-white mr-10"
-                              href="
-                              >----</a
-                            >
+                            
                             <a
                               class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bg-blue font-white"
                               href="#contact_sec"
                               data-scroll
-                              >contact</a
-                            >
+                              >Contact</a>
                           </div>
                         </div>
                         <ul class="profile-wrap mt-50">
@@ -449,7 +433,7 @@
                     class="mdl-card mdl-shadow--2dp text-center pa-20 pt-30 pb-30"
                   >
                     <i class="zmdi zmdi-tv"></i>
-                    <span>motorsport</span>
+                    <span>Motorsport</span>
                   </div>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 mb-30">
@@ -457,7 +441,7 @@
                     class="mdl-card mdl-shadow--2dp text-center pa-20 pt-30 pb-30"
                   >
                     <i class="zmdi zmdi-radio"></i>
-                    <span>music</span>
+                    <span>Music</span>
                   </div>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 mb-30">
@@ -465,7 +449,7 @@
                     class="mdl-card mdl-shadow--2dp text-center pa-20 pt-30 pb-30"
                   >
                     <i class="zmdi zmdi-smartphone"></i>
-                    <span>gaming</span>
+                    <span>Gaming</span>
                   </div>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 mb-30">
@@ -473,7 +457,7 @@
                     class="mdl-card mdl-shadow--2dp text-center pa-20 pt-30 pb-30"
                   >
                     <i class="zmdi zmdi-camera"></i>
-                    <span>photography</span>
+                    <span>Photography</span>
                   </div>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 mb-30">
@@ -497,11 +481,11 @@
             <section id="project_sec" class="blog-sec sec-pad-top-sm">
               <h2 class="mb-30">Projects and Work</h2>
 <div class="row" id="repo-card">
-  <!-- Rij 1 -->
+  <!-- Row 1: main projects (3 columns) -->
   <div class="col-md-4 col-sm-4 col-xs-12 mb-30">
     <div class="mdl-card mdl-shadow--2dp text-center pa-20">
-       <img src="img/minimages.jpg" class="img-responsive" alt="Mini Mages cover" style="max-height:160px; object-fit:cover; width:100%;"/>
-    <h4 class="mt-10">Mini Mages</h4>
+      <img src="img/minimages.png" class="img-responsive" alt="Mini Mages cover" style="max-height:160px; object-fit:cover; width:100%;"/>
+      <h4 class="mt-10">Mini Mages</h4>
       <p>1v1 Arena Fight with different attacks.</p>
       <a class="mdl-button mdl-js-button mdl-button--raised bg-blue font-white" href="minimages.html" role="button">View</a>
     </div>
@@ -509,7 +493,8 @@
 
   <div class="col-md-4 col-sm-4 col-xs-12 mb-30">
     <div class="mdl-card mdl-shadow--2dp text-center pa-20">
-      <h4>Formula 2D Racer</h4>
+      <img src="img/F2GStart.png" class="img-responsive" alt="Formula 2D Racer cover" style="max-height:160px; object-fit:cover; width:100%;"/>
+      <h4 class="mt-10">Formula 2D Racer</h4>
       <p>Top-down raceprototype. Unreleased.</p>
       <a class="mdl-button mdl-js-button mdl-button--raised bg-blue font-white" href="f2racegame.html" role="button">View</a>
     </div>
@@ -517,40 +502,19 @@
 
   <div class="col-md-4 col-sm-4 col-xs-12 mb-30">
     <div class="mdl-card mdl-shadow--2dp text-center pa-20">
-      <h4>Operation Phoenix</h4>
+      <img src="img/AsteroidsGame.png" class="img-responsive" alt="Operation Phoenix cover" style="max-height:160px; object-fit:cover; width:100%;"/>
+      <h4 class="mt-10">Operation Phoenix</h4>
       <p>Shoot at Robot-Enemies to get score!</p>
       <a class="mdl-button mdl-js-button mdl-button--raised bg-blue font-white" href="ásteroids.html" role="button">View</a>
     </div>
   </div>
 
 </div>
-  
-  <!-- Rij 2 -->
-  <div class="row" id="repo-card-2">
-    <div class="col-md-4 col-sm-4 col-xs-12 mb-30">
-      <div class="mdl-card mdl-shadow--2dp text-center pa-20">
-        <h4>Gooi 't maar</h4>
-        <p>Physics throw prototype — test collisions and throwing mechanics.</p>
-        <a class="mdl-button mdl-js-button mdl-button--raised bg-blue font-white" href="gooitmaar.html" role="button">View</a>
-      </div>
-    </div>
 
-    <!-- <div class="col-md-4 col-sm-4 col-xs-12 mb-30">
-      <div class="mdl-card mdl-shadow--2dp text-center pa-20">
-        <h4>Project 5</h4>
-        <p>Korte omschrijving van project 5.</p>
-        <a class="mdl-button mdl-js-button mdl-button--raised bg-blue font-white" href="#" role="button">Bekijk</a>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-sm-4 col-xs-12 mb-30">
-      <div class="mdl-card mdl-shadow--2dp text-center pa-20">
-        <h4>Project 6</h4>
-        <p>Korte omschrijving van project 6.</p>
-        <a class="mdl-button mdl-js-button mdl-button--raised bg-blue font-white" href="#" role="button">Bekijk</a>
-      </div>
-    </div> -->
-  </div>
+<!-- Row 2: secondary projects -->
+<div class="row" id="repo-card-2">
+  <!-- Projects for row 2 are rendered from repos.json -->
+</div>
             </section>
             <section id="contact_sec" class="contact-sec sec-pad-top-sm">
               <h2 class="mb-35">contact</h2>
@@ -559,164 +523,26 @@
                   <div class="mdl-card mdl-shadow--2dp text-center">
                     <h4 class="mb-10 font-unsetcase">Find me on.</h4>
                     <ul class="social-icons mt-10">
+                      <li><!-- facebook placeholder --></li>
+                      <li><!-- twitter placeholder --></li>
                       <li>
-                        <!-- <a
-                          class="facebook-link"
-                          href=""
-                        >
-                          <i
-                            id="tt6"
-                            class="zmdi zmdi-facebook"
-                            tabindex="0"
-                          ></i>
-                          <div
-                            class="mdl-tooltip"
-                            data-mdl-for="tt6"
-                            data-upgraded="MaterialTooltip"
-                            style="left: 332px; margin-left: -34px; top: 545px"
-                          >
-                            
-                          </div>
-                        </a> -->
-                      </li>
-                      <li>
-                        <!-- <a
-                          class="twitter-link"
-                          href=""
-                        >
-                          <i
-                            id="tt7"
-                            class="zmdi zmdi-twitter"
-                            tabindex="0"
-                          ></i>
-                          <div
-                            class="mdl-tooltip"
-                            data-mdl-for="tt7"
-                            data-upgraded="MaterialTooltip"
-                            style="
-                              left: 270.533px;
-                              margin-left: -26.5px;
-                              top: 568px;
-                            "
-                          >
-                            
-                          </div>
-                        </a> -->
-                      </li>
-                      <li>
-                        <a
-                          class="linkedin-link"
-                          href="https://www.linkedin.com/in/michael-van-baalen-87a438395/"
-                        >
-                          <i
-                            id="tt8"
-                            class="zmdi zmdi-linkedin"
-                            tabindex="0"
-                          ></i>
-                          <div
-                            class="mdl-tooltip"
-                            data-mdl-for="tt8"
-                            data-upgraded="MaterialTooltip"
-                            style="
-                              left: 332px;
-                              margin-left: -30.5px;
-                              top: 568px;
-                            "
-                          >
-                            
-                          </div>
+                        <a class="linkedin-link" href="https://www.linkedin.com/in/michael-van-baalen-87a438395/">
+                          <i class="zmdi zmdi-linkedin"></i>
                         </a>
                       </li>
                       <li>
-                        <a
-                          class="youtube-link"
-                          href="https://www.youtube.com/@MichaelWitkamp"
-                        >
-                          <i
-                            id="tt10"
-                            class="zmdi zmdi-youtube-play"
-                            tabindex="0"
-                          ></i>
-                          <div
-                            class="mdl-tooltip"
-                            data-mdl-for="tt10"
-                            data-upgraded="MaterialTooltip"
-                            style="
-                              left: 454.933px;
-                              margin-left: -35px;
-                              top: 568px;
-                            "
-                          >
-                            youtube
-                          </div>
+                        <a class="youtube-link" href="https://www.youtube.com/@MichaelWitkamp">
+                          <i class="zmdi zmdi-youtube-play"></i>
                         </a>
                       </li>
                       <li>
-                        <!-- <a
-                          class="reddit-link"
-                          href=""
-                        >
-                          <i
-                            id="tt10"
-                            class="zmdi zmdi-reddit"
-                            tabindex="0"
-                          ></i>
-                          <div
-                            class="mdl-tooltip"
-                            data-mdl-for="tt10"
-                            data-upgraded="MaterialTooltip"
-                            style="
-                              left: 454.933px;
-                              margin-left: -35px;
-                              top: 568px;
-                            "
-                          >
-                            reddit
-                          </div> -->
+                        <a class="instagram-link" href="https://www.instagram.com/michaelwitkamp/">
+                          <i class="zmdi zmdi-instagram"></i>
                         </a>
                       </li>
                       <li>
-                        <a
-                          class="instagram-link"
-                          href="https://www.instagram.com/michaelwitkamp/"
-                        >
-                          <i
-                            id="tt10"
-                            class="zmdi zmdi-instagram"
-                            tabindex="0"
-                          ></i>
-                          <div
-                            class="mdl-tooltip"
-                            data-mdl-for="tt10"
-                            data-upgraded="MaterialTooltip"
-                            style="
-                              left: 454.933px;
-                              margin-left: -35px;
-                              top: 568px;
-                            "
-                          >
-                            instagram
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="github-link"
-                          href="https://github.com/NyckdeVries21"
-                        >
-                          <i id="tt9" class="zmdi zmdi-github" tabindex="0"></i>
-                          <div
-                            class="mdl-tooltip"
-                            data-mdl-for="tt9"
-                            data-upgraded="MaterialTooltip"
-                            style="
-                              left: 393.467px;
-                              margin-left: -30px;
-                              top: 568px;
-                            "
-                          >
-                            github
-                          </div>
+                        <a class="github-link" href="https://github.com/NyckdeVries21">
+                          <i class="zmdi zmdi-github"></i>
                         </a>
                       </li>
                     </ul>
@@ -729,7 +555,7 @@
             >
               <h4>Thank you for visiting.</h4>
               <p class="mt-10">
-                Michael van Baalen © 2025 All rights reserved.
+                Michael van Baalen © 2026 All rights reserved.
               </p>
             </footer>
           </div>
