@@ -29,7 +29,7 @@
   {
     "name": "Gooi 't Maar",
     "url": "gooitmaar.html",
-    "description": "Select a card to use an object.",
+    "description": "Select a card to use an object - Dutch Game.",
     "banner": "img/gooitmaargame.png",
     "color": "#FF9800",
     "lang": "C# - Unity",
