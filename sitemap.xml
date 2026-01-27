@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
+  <!-- <!-- <url>
     <loc>https://ptprashanttripathi.github.io</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
@@ -29,7 +29,7 @@
     <loc>https://ptprashanttripathi.github.io/linkpe</loc>
     <changefreq>always</changefreq>
     <priority>0.8</priority>
-  </url>
+  </url> -->
   <url>
     <loc>https://ptprashanttripathi.github.io/movieinfo</loc>
     <changefreq>always</changefreq>
@@ -54,5 +54,5 @@
     <loc>https://ptprashanttripathi.github.io/simple-portfolio</loc>
     <changefreq>always</changefreq>
     <priority>0.8</priority>
-  </url>
+  </url> -->
 </urlset>
