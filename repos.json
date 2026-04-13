@@ -3,7 +3,7 @@
     "name": "Mini Mages",
     "url": "minimages.html",
     "description": "1v1 Arena Fight with different attacks.",
-    "banner": "img/minimages.png",
+    "banner": "img/minimages/minimages.png",
     "color": "#4CAF50",
     "lang": "C# - Unity",
     "date": "2025-12-05T10:00:00Z"
@@ -12,7 +12,7 @@
     "name": "Formula 2D Racer",
     "url": "f2racegame.html",
     "description": "Top-down raceprototype. Unreleased.",
-    "banner": "img/F2GStart.png",
+    "banner": "img/F2Game/F2GStart.png",
     "color": "#2196F3",
     "lang": "C# - Unity",
     "date": "2025-10-28T10:00:00Z"
@@ -21,7 +21,7 @@
     "name": "Operation Phoenix",
     "url": "ásteroids.html",
     "description": "Shoot at Robot Enemies to get score.",
-    "banner": "img/AsteroidsGame.png",
+    "banner": "img/Asteroids/AsteroidsGame.png",
     "color": "#FF9800",
     "lang": "C# - Unity",
     "date": "2025-04-17T10:00:00Z"
@@ -30,9 +30,18 @@
     "name": "Gooi 't Maar",
     "url": "gooitmaar.html",
     "description": "Select a card to use an object - Dutch Game.",
-    "banner": "img/gooitmaargame.png",
+    "banner": "img/gooitmaar/gooitmaargame.png",
     "color": "#FF9800",
     "lang": "C# - Unity",
-    "date": "2026-1-27T10:00:00Z"
+    "date": "2026-01-27T10:00:00Z"
+  },
+  {
+    "name": "Drive & Deliver",
+    "url": "driveanddeliver.html",
+    "description": "Delivery driving prototype — Deliver the products.",
+    "banner": "img/DriveDeliver/DriveAndDeliverStart.png",
+    "color": "#9C27B0",
+    "lang": "C# - Unity",
+    "date": "2026-04-13T10:00:00Z"
   }
 ]
