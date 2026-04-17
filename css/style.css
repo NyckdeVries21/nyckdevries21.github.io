@@ -43,7 +43,7 @@ strong {
 }
 body {
   color: #848484;
-  background: #e2e2e2;
+  background: #e6fbff; /* light-blue page background */
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -242,7 +242,7 @@ p {
   position: relative;
 }
 .main-wrapper {
-  background: #eee;
+  background: #e6fbff; /* light-blue page container */
   position: relative;
 }
 .mdl-button {
@@ -282,6 +282,8 @@ p {
     0 2px 2px 0 rgba(0, 0, 0, 0.03),
     0 3px 1px -2px rgba(0, 0, 0, 0.03),
     0 1px 5px 0 rgba(0, 0, 0, 0.03);
+  background: #e0e0e0; /* gray tiles */
+  color: #111;
 }
 .mdl-card__title {
   display: block;
@@ -469,7 +471,7 @@ p {
   top: 0;
 }
 .bg-struct.bg-img {
-  background: url(https://www.carscoops.com/wp-content/uploads/2023/07/2023-AlphaTauri-AT04.jpg);
+  background: url("../img/gamedevbackground.png");
   background-position: center;
   background-size: cover;
 }
