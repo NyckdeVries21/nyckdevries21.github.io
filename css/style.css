@@ -352,6 +352,7 @@ p {
 .main-wrapper {
   background: transparent; /* page container uses body gradient */
   position: relative;
+  padding-top: 8px; /* reduce top gap so content sits nearer to top navigation */
 }
 .mdl-button {
   color: #fff;
@@ -816,3 +817,12 @@ p {
     margin-left: 10px;
   }
 }
+
+/* Project preview modal */
+.project-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 120000; }
+.project-modal.open { display:flex; }
+.project-modal__backdrop { position: absolute; inset: 0; background: rgba(9,20,33,0.6); backdrop-filter: blur(2px); }
+.project-modal__panel { position: relative; width: min(1100px, 95%); height: min(720px, 85%); background: var(--card-bg); box-shadow: 0 20px 60px rgba(0,0,0,0.6); border-radius: 12px; overflow: hidden; z-index: 2; display:flex; flex-direction:column; }
+.project-modal__close { position: absolute; top: 8px; right: 10px; z-index: 3; border: 0; background: transparent; color: var(--muted); font-size: 26px; padding: 6px 10px; cursor: pointer; }
+.project-modal__framewrap { flex: 1; }
+.project-modal__framewrap iframe { width: 100%; height: 100%; border: 0; background: #fff; }

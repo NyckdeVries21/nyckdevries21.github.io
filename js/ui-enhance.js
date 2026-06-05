@@ -131,6 +131,40 @@
     });
   }
 
+  /* Project preview modal handler: open project pages inside an iframe */
+  (function(){
+    var modal = document.getElementById('project-modal');
+    var iframe = document.getElementById('project-modal-frame');
+    var closeBtn = document.getElementById('project-modal-close');
+    function openModal(url){
+      if(!modal || !iframe) return;
+      iframe.src = url;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+    function closeModal(){
+      if(!modal || !iframe) return;
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      try{ iframe.src = 'about:blank'; } catch(e){}
+    }
+    document.addEventListener('click', function(e){
+      // Only intercept links explicitly marked for preview (data-preview="true").
+      // This lets normal "View" links behave like regular navigations.
+      var a = e.target.closest && e.target.closest('a.repo-view-btn[data-preview]');
+      if(!a) return;
+      // allow modifier clicks to open in new tab
+      if(e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      openModal(a.getAttribute('href'));
+    });
+    if(modal){
+      modal.addEventListener('click', function(e){ if(e.target && e.target.hasAttribute('data-modal-close')) closeModal(); });
+    }
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+  })();
+
   /* Custom cursor removed (disabled) */
 
   })();
